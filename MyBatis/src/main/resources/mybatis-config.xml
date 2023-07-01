@@ -1,0 +1,31 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE configuration
+        PUBLIC '-//mybatis.org//DTD Config 3.0//EN'
+        'http://mybatis.org/dtd/mybatis-3-config.dtd'>
+<configuration>
+
+    <typeAliases>
+        <typeAlias type="org.example.Entities.CarBrand" alias="CarBrand"/>
+        <typeAlias type="org.example.Entities.CarModel" alias="CarModel"/>
+    </typeAliases>
+
+
+    <environments default="development">
+        <environment id="development">
+            <transactionManager type="JDBC"/>
+            <dataSource type="POOLED">
+                <property name="driver" value="com.microsoft.sqlserver.jdbc.SQLServerDriver"/>
+                <property name="url" value="jdbc:sqlserver://localhost:1433;encrypt=true;TrustServerCertificate=true;databaseName=MyBatis"/>
+                <property name="username" value="SA"/>
+                <property name="password" value="FridaFrida1337"/>
+            </dataSource>
+        </environment>
+    </environments>
+
+
+    <mappers>
+        <mapper resource='mappers/CarBrandMapper.xml'/>
+        <mapper resource='mappers/CarModelMapper.xml'/>
+    </mappers>
+
+</configuration>
